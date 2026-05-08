@@ -7,8 +7,8 @@ import { FaGithub } from 'react-icons/fa';
 const Projects = () => {
   const projects = [
     {
-      title: "Institute Helpdesk & IT Support Ticket System",
-      desc: "A comprehensive IT support ticket system built for educational institutes. Features include ticket creation, assignment, tracking, and role-based access control.",
+      title: "Academic resource portal",
+      desc: "An Academic Resource Portal is a web platform that helps students access study materials, notes, assignments, and educational resources in one place.",
       image: "https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=800&auto=format&fit=crop",
       tags: ["React", "Node.js", "Express", "Tailwind CSS"],
       github: "#",
