@@ -63,7 +63,7 @@ const Navbar = () => {
       
       <div className="relative max-w-6xl mx-auto px-6 flex items-center justify-between z-10">
         <a href="#home" className="text-2xl font-bold tracking-tighter group">
-          K<span className="text-primary transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(255,16,122,0.8)]">T</span>
+          A<span className="text-primary transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(255,16,122,0.8)]">S</span>
         </a>
 
         {/* Desktop Nav */}
