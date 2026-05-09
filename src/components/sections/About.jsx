@@ -31,7 +31,7 @@ const About = () => {
       <div className="flex flex-col md:flex-row gap-16 items-center mb-24">
         <div className="w-full md:w-1/2 space-y-6 text-lg text-text-muted leading-relaxed">
           <p>
-            Hello! I'm <strong className="text-text-color font-semibold">Kristina K Thomas</strong>, a web developer based in Mumbai, India. I specialize in building premium digital experiences that are as technically sound as they are visually striking.
+            Hello! I'm <strong className="text-text-color font-semibold">Anushha Shahe</strong>, a web developer based in Mumbai, India. I specialize in building premium digital experiences that are as technically sound as they are visually striking.
           </p>
           <p>
             My approach combines modern frameworks like React with cutting-edge CSS techniques (like glassmorphism and complex animations) to deliver products that truly stand out in today's crowded digital landscape.
