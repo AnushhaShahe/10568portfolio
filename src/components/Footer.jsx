@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="text-center md:text-left">
             <a href="#home" className="text-2xl font-bold tracking-tighter inline-block mb-3">
-              K<span className="text-primary">T</span>
+              A<span className="text-primary">S</span>
             </a>
             <p className="text-text-muted font-medium text-sm max-w-xs">
               Designing and building the next generation of premium web experiences.
@@ -51,7 +51,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 pt-8 border-t border-glass-border text-center text-sm text-text-muted font-medium">
-          <p>&copy; {new Date().getFullYear()} Kristina K Thomas. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Anuushha Shahe. All rights reserved.</p>
         </div>
       </div>
     </footer>
