@@ -1,17 +1,17 @@
-import React from 'react';
 import Section from '../ui/Section';
 import { motion } from 'framer-motion';
-import { GraduationCap, Calendar, Award } from 'lucide-react';
+import { GraduationCap, Calendar } from 'lucide-react';
 
 const Education = () => {
   const education = [
     {
-      degree: "B.E. in Electronics and Computer Science Engineering",
-      school: "Fr.CRCE Bandra",
-      period: "Present (2nd Year)",
-      description: "Currently pursuing my degree, focusing on core engineering principles and modern software development practices.",
-      icon: <GraduationCap size={24} />
-    }
+      degree: 'B.E. in Electronics and Computer Science Engineering',
+      school: 'Fr.CRCE Bandra',
+      period: 'Present (2nd Year)',
+      description:
+        'Currently pursuing my degree, focusing on core engineering principles and modern software development practices.',
+      icon: <GraduationCap size={24} />,
+    },
   ];
 
   return (
@@ -20,44 +20,44 @@ const Education = () => {
       title="Education & Experience"
       subtitle="My academic and professional background."
     >
-      <div className="relative max-w-4xl mx-auto mt-12">
-        {/* Timeline Line - Glowing */}
-        <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary/50 via-purple-500/50 to-transparent transform md:-translate-x-1/2 hidden md:block rounded-full shadow-[0_0_15px_rgba(255,16,122,0.5)]" />
+      <div className="relative mx-auto mt-4 max-w-4xl">
+        <div className="absolute bottom-0 left-8 top-0 hidden w-px bg-gradient-to-b from-primary/60 via-emerald-500/40 to-transparent shadow-[0_0_12px_rgba(5,150,105,0.4)] md:left-1/2 md:block md:-translate-x-1/2" />
 
-        <div className="space-y-16">
+        <div className="space-y-14 md:space-y-16">
           {education.map((item, index) => (
             <motion.div
               key={item.degree}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: index * 0.2, duration: 0.6 }}
-              className={`relative flex flex-col md:flex-row gap-8 items-center ${
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ delay: index * 0.15, duration: 0.55 }}
+              className={`relative flex flex-col items-center gap-8 md:flex-row ${
                 index % 2 === 0 ? 'md:flex-row-reverse' : ''
               }`}
             >
-              {/* Timeline Dot - Glowing */}
-              <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-14 h-14 rounded-full bg-surface-color border-4 border-primary items-center justify-center text-primary z-10 shadow-[0_0_20px_rgba(255,16,122,0.8)] backdrop-blur-md">
+              <div className="absolute left-8 hidden h-12 w-12 -translate-x-1/2 items-center justify-center rounded-full border-4 border-primary bg-[var(--bg-color)] text-primary shadow-[0_0_24px_rgba(5,150,105,0.5)] backdrop-blur-md md:left-1/2 md:flex md:-translate-x-1/2">
                 {item.icon}
               </div>
 
-              {/* Content Card - Glassmorphism */}
-              <div className="w-full md:w-1/2 flex flex-col">
-                <div className={`glass p-8 rounded-3xl hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(255,16,122,0.15)] ${
-                  index % 2 === 0 ? 'md:mr-12 md:text-right' : 'md:ml-12'
-                }`}>
-                  <div className={`flex items-center gap-2 mb-3 text-primary font-bold tracking-wider text-sm ${
-                    index % 2 === 0 ? 'md:justify-end' : ''
-                  }`}>
+              <div className="w-full md:w-1/2">
+                <motion.div
+                  whileHover={{ y: -4 }}
+                  className={`glass rounded-2xl p-8 transition-shadow duration-300 hover:border-primary/35 hover:shadow-[0_20px_48px_rgba(5,150,105,0.12)] ${
+                    index % 2 === 0 ? 'md:mr-10 md:text-right' : 'md:ml-10'
+                  }`}
+                >
+                  <div
+                    className={`mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-primary ${
+                      index % 2 === 0 ? 'md:justify-end' : ''
+                    }`}
+                  >
                     <Calendar size={16} />
                     <span>{item.period}</span>
                   </div>
-                  <h3 className="text-2xl font-bold mb-2">{item.degree}</h3>
-                  <h4 className="text-lg text-text-muted mb-4 font-medium">{item.school}</h4>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
+                  <h3 className="mb-2 text-2xl font-bold text-[var(--text-color)]">{item.degree}</h3>
+                  <h4 className="mb-4 text-lg font-medium text-text-muted">{item.school}</h4>
+                  <p className="leading-relaxed text-text-muted">{item.description}</p>
+                </motion.div>
               </div>
             </motion.div>
           ))}

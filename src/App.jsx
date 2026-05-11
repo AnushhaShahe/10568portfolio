@@ -1,33 +1,39 @@
-import React from 'react';
-import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
+import FloatingBackground from './components/FloatingBackground';
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
 import Skills from './components/sections/Skills';
 import Projects from './components/sections/Projects';
 import Education from './components/sections/Education';
 import Contact from './components/sections/Contact';
+import Social from './components/sections/Social';
 import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="relative min-h-screen selection:bg-primary/30 selection:text-primary">
-      {/* Animated Background Blobs */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none z-[-1]">
-        <div className="absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] rounded-full bg-[var(--blob-1)] blur-[100px] animate-blob" />
-        <div className="absolute top-[20%] right-[-10%] w-[35vw] h-[35vw] rounded-full bg-[var(--blob-2)] blur-[120px] animate-blob animation-delay-2000" />
-        <div className="absolute bottom-[-10%] left-[20%] w-[45vw] h-[45vw] rounded-full bg-[var(--blob-1)] blur-[150px] animate-blob animation-delay-4000" />
-      </div>
+    <div className="relative min-h-screen selection:bg-primary/25 selection:text-primary">
+      <FloatingBackground />
+      <Sidebar />
 
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Education />
-        <Contact />
-      </main>
-      <Footer />
+      <a
+        href="#home"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-20 focus:z-[60] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white lg:focus:top-4"
+      >
+        Skip to content
+      </a>
+
+      <div className="relative z-10 min-w-0 flex-1 lg:pl-[280px]">
+        <main className="px-4 pb-16 pt-[4.5rem] sm:px-8 lg:px-12 lg:pt-10">
+          <Hero />
+          <About />
+          <Skills />
+          <Projects />
+          <Education />
+          <Contact />
+          <Social />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 }

@@ -1,27 +1,26 @@
-import React from 'react';
 import Section from '../ui/Section';
 import { motion } from 'framer-motion';
 
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Frontend Development",
+      title: 'Frontend Development',
       skills: [
-        { name: "React / Next.js", level: 90 },
-        { name: "JavaScript / TypeScript", level: 85 },
-        { name: "Tailwind CSS / Glassmorphism", level: 95 },
-        { name: "Framer Motion", level: 85 },
-      ]
+        { name: 'React / Next.js', level: 90 },
+        { name: 'JavaScript / TypeScript', level: 85 },
+        { name: 'Tailwind CSS / Glassmorphism', level: 95 },
+        { name: 'Framer Motion', level: 85 },
+      ],
     },
     {
-      title: "Backend & Tooling",
+      title: 'Backend & Tooling',
       skills: [
-        { name: "Node.js / Express", level: 75 },
-        { name: "PostgreSQL / MongoDB", level: 70 },
-        { name: "Git & CI/CD", level: 80 },
-        { name: "Figma (UI/UX)", level: 85 },
-      ]
-    }
+        { name: 'Node.js / Express', level: 75 },
+        { name: 'PostgreSQL / MongoDB', level: 70 },
+        { name: 'Git & CI/CD', level: 80 },
+        { name: 'Figma (UI/UX)', level: 85 },
+      ],
+    },
   ];
 
   return (
@@ -30,38 +29,37 @@ const Skills = () => {
       title="Technical Mastery"
       subtitle="The tools and technologies I use to bring ideas to life."
     >
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
         {skillCategories.map((category, catIndex) => (
-          <motion.div 
+          <motion.div
             key={category.title}
-            initial={{ opacity: 0, x: catIndex === 0 ? -30 : 30 }}
+            initial={{ opacity: 0, x: catIndex === 0 ? -24 : 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="glass p-8 rounded-3xl"
+            transition={{ duration: 0.6 }}
+            className="glass rounded-2xl p-8"
           >
-            <h3 className="text-2xl font-bold mb-8 text-primary drop-shadow-[0_0_8px_rgba(255,16,122,0.4)]">
+            <h3 className="mb-8 text-2xl font-bold text-primary drop-shadow-[0_0_10px_rgba(5,150,105,0.35)]">
               {category.title}
             </h3>
             <div className="space-y-6">
               {category.skills.map((skill, index) => (
                 <div key={skill.name} className="group">
-                  <div className="flex justify-between mb-2">
-                    <span className="font-semibold text-text-color group-hover:text-primary transition-colors">
+                  <div className="mb-2 flex justify-between">
+                    <span className="font-semibold text-[var(--text-color)] transition-colors group-hover:text-primary">
                       {skill.name}
                     </span>
-                    <span className="text-text-muted font-mono">{skill.level}%</span>
+                    <span className="font-mono text-sm text-text-muted">{skill.level}%</span>
                   </div>
-                  <div className="h-2 w-full bg-black/5 dark:bg-white/5 rounded-full overflow-hidden shadow-inner">
+                  <div className="h-2 w-full overflow-hidden rounded-full bg-black/[0.06] shadow-inner dark:bg-white/[0.08]">
                     <motion.div
                       initial={{ width: 0 }}
                       whileInView={{ width: `${skill.level}%` }}
                       viewport={{ once: true }}
-                      transition={{ duration: 1.2, delay: 0.3 + (index * 0.1), ease: "easeOut" }}
-                      className="h-full bg-gradient-to-r from-primary to-purple-500 rounded-full shadow-[0_0_10px_rgba(255,16,122,0.8)] relative"
+                      transition={{ duration: 1.1, delay: 0.25 + index * 0.08, ease: 'easeOut' }}
+                      className="relative h-full rounded-full bg-gradient-to-r from-primary via-emerald-500 to-teal-400 shadow-[0_0_14px_rgba(5,150,105,0.55)]"
                     >
-                      {/* Animated shine effect on progress bar */}
-                      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full animate-[shimmer_2s_infinite]" />
+                      <div className="absolute inset-0 animate-[shimmer_2.2s_infinite] bg-gradient-to-r from-transparent via-white/35 to-transparent" />
                     </motion.div>
                   </div>
                 </div>
@@ -71,21 +69,24 @@ const Skills = () => {
         ))}
       </div>
 
-      <div className="mt-24">
-        <h3 className="text-2xl font-bold text-center mb-10">Additional Tech Stack</h3>
-        <div className="flex flex-wrap justify-center gap-4">
-          {["HTML5", "CSS3", "Redux Toolkit", "REST APIs", "GraphQL", "Docker", "AWS", "Vercel", "Firebase"].map((tech, i) => (
-            <motion.div
-              key={tech}
-              initial={{ opacity: 0, scale: 0.8, y: 20 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05, type: "spring", stiffness: 200 }}
-              className="px-6 py-3 glass rounded-full text-sm font-bold tracking-wide hover:border-primary hover:text-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(255,16,122,0.2)] cursor-default"
-            >
-              {tech}
-            </motion.div>
-          ))}
+      <div className="mt-16 lg:mt-20">
+        <h3 className="mb-8 text-center text-2xl font-bold text-[var(--text-color)]">Additional Tech Stack</h3>
+        <div className="flex flex-wrap justify-center gap-3">
+          {['HTML5', 'CSS3', 'Redux Toolkit', 'REST APIs', 'GraphQL', 'Docker', 'AWS', 'Vercel', 'Firebase'].map(
+            (tech, i) => (
+              <motion.span
+                key={tech}
+                initial={{ opacity: 0, scale: 0.9, y: 12 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.04, type: 'spring', stiffness: 260, damping: 18 }}
+                whileHover={{ y: -4, scale: 1.03 }}
+                className="cursor-default rounded-full border border-glass-border bg-surface-color/90 px-5 py-2.5 text-sm font-semibold tracking-wide text-[var(--text-color)] shadow-sm backdrop-blur-md transition-colors hover:border-primary/40 hover:text-primary"
+              >
+                {tech}
+              </motion.span>
+            )
+          )}
         </div>
       </div>
     </Section>

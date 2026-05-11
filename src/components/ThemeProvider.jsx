@@ -1,14 +1,14 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+/* eslint-disable react-refresh/only-export-components -- hook paired with provider */
+import { createContext, useContext, useEffect, useState } from 'react';
 
-const ThemeContext = createContext();
+const ThemeContext = createContext(null);
 
 export const useTheme = () => useContext(ThemeContext);
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
-    // Default to dark mode given the black/neon pink theme
     const savedTheme = localStorage.getItem('theme');
-    return savedTheme ? savedTheme : 'dark';
+    return savedTheme ? savedTheme : 'light';
   });
 
   useEffect(() => {

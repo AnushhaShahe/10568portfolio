@@ -1,88 +1,97 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Download } from 'lucide-react';
+import { ArrowRight, Download, Sparkles } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center pt-24 px-6 relative overflow-hidden">
-      <div className="max-w-4xl mx-auto w-full flex flex-col items-center text-center z-10">
-        
-        {/* Text Content */}
-        <div className="flex flex-col items-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <span className="inline-block py-1.5 px-4 rounded-full glass text-primary font-medium mb-8 text-sm tracking-wide shadow-[0_0_15px_rgba(255,16,122,0.2)]">
-              ✨ Welcome to my universe
-            </span>
-          </motion.div>
+    <section
+      id="home"
+      className="relative scroll-mt-[5.5rem] overflow-hidden pb-12 pt-4 lg:scroll-mt-10 lg:pb-20 lg:pt-2"
+    >
+      <div className="pointer-events-none absolute -right-20 top-0 h-72 w-72 rounded-full bg-primary/15 blur-3xl" />
+      <div className="pointer-events-none absolute -left-16 bottom-0 h-64 w-64 rounded-full bg-emerald-400/10 blur-3xl dark:bg-emerald-400/5" />
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-            className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tighter mb-6 leading-[1.1]"
-          >
-            Hi, I'm <br />
-            <span className="text-gradient">Kristina K Thomas</span>
-          </motion.h1>
+      <div className="relative z-10 mx-auto max-w-5xl">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-8 inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-primary shadow-[0_0_24px_rgba(5,150,105,0.15)] backdrop-blur-md"
+        >
+          <Sparkles size={14} strokeWidth={2.5} className="text-primary" />
+          Welcome to my universe
+        </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="text-lg md:text-xl text-text-muted mb-10 max-w-2xl leading-relaxed"
-          >
-            A passionate developer based in Mumbai, crafting futuristic, premium, and highly responsive web experiences.
-          </motion.p>
+        <motion.h1
+          initial={{ opacity: 0, y: 28 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, delay: 0.06 }}
+          className="text-[clamp(2.5rem,6vw,4.75rem)] font-bold leading-[1.05] tracking-tight text-[var(--text-color)]"
+        >
+          Hi, I&apos;m{' '}
+          <span className="text-gradient drop-shadow-[0_0_40px_rgba(5,150,105,0.25)]">Shloka Shetty</span>
+        </motion.h1>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            className="flex flex-wrap justify-center items-center gap-4 mb-12"
-          >
-            <a
-              href="#projects"
-              className="px-8 py-4 bg-primary text-white rounded-2xl font-bold hover:bg-primary-hover transition-all flex items-center gap-2 group shadow-[0_0_20px_rgba(255,16,122,0.4)] hover:shadow-[0_0_30px_rgba(255,16,122,0.6)] hover:-translate-y-1"
-            >
-              View Projects
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </a>
-            <a
-              href="#"
-              className="px-8 py-4 glass rounded-2xl font-bold hover:bg-white/10 dark:hover:bg-black/10 transition-all flex items-center gap-2 hover:-translate-y-1 group"
-            >
-              <Download size={18} className="group-hover:-translate-y-1 transition-transform" />
-              Resume
-            </a>
-          </motion.div>
+        <motion.p
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, delay: 0.12 }}
+          className="mt-8 max-w-2xl text-lg leading-relaxed text-text-muted sm:text-xl"
+        >
+          A passionate developer based in Mumbai, crafting futuristic, premium, and highly responsive web experiences.
+        </motion.p>
 
-          {/* Social Links */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.6 }}
-            className="flex items-center gap-6"
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, delay: 0.2 }}
+          className="mt-10 flex flex-wrap items-center gap-4"
+        >
+          <motion.a
+            href="#projects"
+            whileHover={{ scale: 1.02, y: -2 }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-primary to-emerald-600 px-8 py-4 text-sm font-bold text-white shadow-[0_12px_40px_rgba(5,150,105,0.35)] ring-1 ring-white/25 transition-shadow hover:shadow-[0_16px_48px_rgba(5,150,105,0.45)]"
           >
+            View Projects
+            <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+          </motion.a>
+          <motion.a
+            href="/resume.pdf"
+            download="Shloka_Shetty_Resume.pdf"
+            whileHover={{ scale: 1.02, y: -2 }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-flex items-center gap-2 rounded-2xl border border-glass-border bg-surface-color/80 px-8 py-4 text-sm font-bold text-[var(--text-color)] shadow-[0_8px_32px_rgba(5,80,50,0.06)] backdrop-blur-xl transition-all hover:border-primary/40 hover:shadow-[0_12px_36px_rgba(5,150,105,0.12)] dark:shadow-none"
+          >
+            <Download size={18} />
+            Resume
+          </motion.a>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.45 }}
+          className="mt-14 flex items-center gap-6 border-t border-glass-border pt-10"
+        >
+          <span className="text-xs font-bold uppercase tracking-widest text-text-muted">Social</span>
+          <div className="flex items-center gap-5">
             {[
-              { icon: <FaGithub size={26} />, href: "#" },
-              { icon: <FaLinkedin size={26} />, href: "#" },
-              { icon: <FaTwitter size={26} />, href: "#" },
+              { icon: <FaGithub size={24} />, href: '#' },
+              { icon: <FaLinkedin size={24} />, href: '#' },
+              { icon: <FaTwitter size={24} />, href: '#' },
             ].map((social, idx) => (
-              <a
+              <motion.a
                 key={idx}
                 href={social.href}
-                className="text-text-muted hover:text-primary hover:-translate-y-1 transition-all duration-300 drop-shadow-md"
+                whileHover={{ y: -4, scale: 1.08 }}
+                className="text-text-muted transition-colors hover:text-primary"
               >
                 {social.icon}
-              </a>
+              </motion.a>
             ))}
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

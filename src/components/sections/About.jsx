@@ -1,4 +1,3 @@
-import React from 'react';
 import Section from '../ui/Section';
 import { motion } from 'framer-motion';
 import { Code2, Layout, Zap } from 'lucide-react';
@@ -6,20 +5,20 @@ import { Code2, Layout, Zap } from 'lucide-react';
 const About = () => {
   const cards = [
     {
-      icon: <Code2 className="text-primary w-10 h-10 mb-6 drop-shadow-[0_0_10px_rgba(255,16,122,0.5)]" />,
+      icon: <Code2 className="mb-6 h-10 w-10 text-primary drop-shadow-[0_0_12px_rgba(5,150,105,0.45)]" />,
       title: 'Clean Architecture',
-      desc: 'I build scalable, maintainable systems using modern design patterns and clean code principles.'
+      desc: 'I build scalable, maintainable systems using modern design patterns and clean code principles.',
     },
     {
-      icon: <Layout className="text-primary w-10 h-10 mb-6 drop-shadow-[0_0_10px_rgba(255,16,122,0.5)]" />,
+      icon: <Layout className="mb-6 h-10 w-10 text-primary drop-shadow-[0_0_12px_rgba(5,150,105,0.45)]" />,
       title: 'Premium UI/UX',
-      desc: 'Crafting pixel-perfect, glassmorphic, and highly interactive user interfaces.'
+      desc: 'Crafting pixel-perfect, glassmorphic, and highly interactive user interfaces.',
     },
     {
-      icon: <Zap className="text-primary w-10 h-10 mb-6 drop-shadow-[0_0_10px_rgba(255,16,122,0.5)]" />,
+      icon: <Zap className="mb-6 h-10 w-10 text-primary drop-shadow-[0_0_12px_rgba(5,150,105,0.45)]" />,
       title: 'High Performance',
-      desc: 'Optimizing rendering, assets, and network requests for lightning-fast web applications.'
-    }
+      desc: 'Optimizing rendering, assets, and network requests for lightning-fast web applications.',
+    },
   ];
 
   return (
@@ -28,47 +27,58 @@ const About = () => {
       title="About Me"
       subtitle="Fusing creativity with engineering to build the digital future."
     >
-      <div className="flex flex-col md:flex-row gap-16 items-center mb-24">
-        <div className="w-full md:w-1/2 space-y-6 text-lg text-text-muted leading-relaxed">
+      <div className="mb-16 flex flex-col gap-12 lg:mb-20 lg:flex-row lg:items-start lg:gap-16">
+        <div className="w-full space-y-6 text-lg leading-relaxed text-text-muted lg:w-1/2">
           <p>
-            Hello! I'm <strong className="text-text-color font-semibold">Kristina K Thomas</strong>, a web developer based in Mumbai, India. I specialize in building premium digital experiences that are as technically sound as they are visually striking.
+            Hello! I&apos;m{' '}
+            <strong className="font-semibold text-[var(--text-color)]">Shloka Shetty</strong>, a web developer based
+            in Mumbai, India. I specialize in building premium digital experiences that are as technically sound as
+            they are visually striking.
           </p>
           <p>
-            My approach combines modern frameworks like React with cutting-edge CSS techniques (like glassmorphism and complex animations) to deliver products that truly stand out in today's crowded digital landscape.
+            My approach combines modern frameworks like React with cutting-edge CSS techniques (like glassmorphism and
+            complex animations) to deliver products that truly stand out in today&apos;s crowded digital landscape.
           </p>
         </div>
-        
-        <div className="w-full md:w-1/2">
-          <div className="glass p-8 rounded-3xl relative overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <h3 className="text-2xl font-bold mb-4 relative z-10">Beyond Coding</h3>
-            <ul className="space-y-4 relative z-10">
+
+        <div className="w-full lg:w-1/2">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.98 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="glass group relative overflow-hidden rounded-2xl p-8"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/12 to-emerald-500/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+            <h3 className="relative z-10 mb-4 text-2xl font-bold text-[var(--text-color)]">Beyond Coding</h3>
+            <ul className="relative z-10 space-y-4">
               {['Constant Learner of New Tech', 'Open Source Contributor', 'Design Enthusiast'].map((item, i) => (
                 <li key={i} className="flex items-center gap-3 text-text-muted">
-                  <div className="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(255,16,122,0.8)]" />
+                  <span className="h-2 w-2 shrink-0 rounded-full bg-primary shadow-[0_0_10px_rgba(5,150,105,0.7)]" />
                   {item}
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
         {cards.map((card, index) => (
           <motion.div
             key={card.title}
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: index * 0.15, duration: 0.6 }}
-            className="glass p-8 rounded-3xl group hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(255,16,122,0.15)]"
+            transition={{ delay: index * 0.1, duration: 0.55 }}
+            whileHover={{ y: -6 }}
+            className="glass group rounded-2xl p-8 transition-shadow duration-300 hover:border-primary/35 hover:shadow-[0_20px_50px_rgba(5,150,105,0.12)]"
           >
-            <div className="transform group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-500">
+            <div className="relative z-10 transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-1">
               {card.icon}
             </div>
-            <h3 className="text-xl font-extrabold mb-3">{card.title}</h3>
-            <p className="text-text-muted leading-relaxed">{card.desc}</p>
+            <h3 className="relative z-10 mb-3 text-xl font-bold text-[var(--text-color)]">{card.title}</h3>
+            <p className="relative z-10 leading-relaxed text-text-muted">{card.desc}</p>
           </motion.div>
         ))}
       </div>
