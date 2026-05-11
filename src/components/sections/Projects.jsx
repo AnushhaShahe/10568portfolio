@@ -1,13 +1,13 @@
 import Section from '../ui/Section';
 import { motion } from 'framer-motion';
-import { Code2, ExternalLink } from 'lucide-react';
+import { Package, ExternalLink } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 
 const Projects = () => {
   const projects = [
     {
-      title: 'Institute Helpdesk & IT Support Ticket System',
-      desc: 'A comprehensive IT support ticket system built for educational institutes. Features include ticket creation, assignment, tracking, and role-based access control.',
+      title: 'Lab Inventory and Equipment Management',
+      desc: 'A lab-focused system for tracking inventory, equipment assignments, maintenance schedules, and usage history. Includes catalog search, low-stock alerts, and role-based access for staff and administrators.',
       tags: ['React', 'Node.js', 'Express', 'Tailwind CSS'],
       github: '#',
       demo: '#',
@@ -42,7 +42,7 @@ const Projects = () => {
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent dark:from-black/70" />
-              <Code2
+              <Package
                 className="absolute -bottom-4 -right-4 h-40 w-40 text-white/10"
                 strokeWidth={1}
                 aria-hidden
